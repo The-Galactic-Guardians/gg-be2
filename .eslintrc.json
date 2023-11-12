@@ -1,7 +1,7 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2022": true
     },
     "extends": [
         "eslint:recommended",
@@ -37,6 +37,8 @@
     "rules": {
         "prettier/prettier": "error",
         "import/extensions": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "@typescript-eslint/strict-boolean-expressions": 0,
+        "@typescript-eslint/prefer-nullish-coalescing": 0
     }
 }
