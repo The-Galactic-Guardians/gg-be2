@@ -4,7 +4,7 @@ import dotenv from 'dotenv-safe';
 dotenv.config();
 
 const dbName = process.env.DB_NAME as string;
-const dbHost= process.env.DB_HOST as string;
+const dbHost = process.env.DB_HOST as string;
 const dbUsername = process.env.DB_USERNAME as string;
 const dbPassword = process.env.DB_PASSWORD as string;
 
@@ -28,14 +28,14 @@ export const Customer = sequelize.define('Customer', {
   total: DataTypes.FLOAT,
   invoiceNumber: DataTypes.INTEGER,
   paymentMethod: DataTypes.STRING,
-  notes: DataTypes.STRING
+  notes: DataTypes.STRING,
 });
 
 sequelize
   .authenticate()
-  .then(() => {
+  .then(async () => {
     console.log('Connection to the database has been established successfully.');
-    return Customer.sync()
+    return await Customer.sync();
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err);
