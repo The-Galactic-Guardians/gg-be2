@@ -112,7 +112,7 @@ app.patch('/update-invoice/:invoiceNumber', (req, res) => {
     .catch(error => res.status(500).json({ messege: 'Error updating invoice by invoice number: ', error }));
 });
 
-app.delete('delete-invoice/:invoiceNumber', (req, res) => {
+app.delete('/delete-invoice/:invoiceNumber', (req, res) => {
   const { invoiceNumber } = req.params;
   Customer.destroy({ where: { invoiceNumber } })
     .then(() => res.status(200).send('Invoice deleted'))
