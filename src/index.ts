@@ -13,6 +13,10 @@ app.listen(port, () => {
   console.log(`App is listing on ${port}`);
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
 app.post('/save-invoice', (req, res) => {
   const {
     clientName,
