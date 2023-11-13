@@ -114,3 +114,7 @@ app.delete('delete-invoice/:invoiceNumber', (req, res) => {
     .then(() => res.status(200).send('Invoice deleted'))
     .catch(error => res.status(500).json({ messege: 'Error deleting invoice by invoice number: ', error }));
 });
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
